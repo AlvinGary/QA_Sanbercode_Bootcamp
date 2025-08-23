@@ -29,3 +29,9 @@ Install Dependencies:
 ```bash
 npm install
 ```
+
+## Quiz 3 Test Result
+
+Here is an example of a successful running test:
+
+![Quiz 3 Success](Screenshots/quiz3_success_test.png)
