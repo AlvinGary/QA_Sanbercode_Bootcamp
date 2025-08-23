@@ -1,0 +1,23 @@
+{
+  "name": "qa_sanbercode_project",
+  "version": "1.0.0",
+  "description": "quiz and project qa sanbercode bootcamp",
+  "homepage": "https://github.com/AlvinGary/QA_Sanbercode_Bootcamp#readme",
+  "bugs": {
+    "url": "https://github.com/AlvinGary/QA_Sanbercode_Bootcamp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlvinGary/QA_Sanbercode_Bootcamp.git"
+  },
+  "license": "ISC",
+  "author": "Alvin",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cypress": "^15.0.0"
+  }
+}
