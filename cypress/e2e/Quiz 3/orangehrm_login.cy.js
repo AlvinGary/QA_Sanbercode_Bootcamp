@@ -14,7 +14,13 @@ describe("Login Feature OrangeHRM", () => {
             cy.get("input[placeholder='Password']")
                 .type("admin123")
                 .should("have.value", "admin123");
+            cy.intercept("GET", "**/dashboard/employees/action-summary").as(
+                "getDashboard"
+            );
             cy.get("button[type='submit']").click();
+            cy.wait("@getDashboard").then((intercept) => {
+                expect(intercept.response.statusCode).to.eq(200);
+            });
             cy.url().should("include", "/dashboard/index");
         });
     });
@@ -26,7 +32,13 @@ describe("Login Feature OrangeHRM", () => {
             cy.get("input[placeholder='Password']")
                 .type("admin123")
                 .should("have.value", "admin123");
+            cy.intercept("GET", "**/dashboard/employees/action-summary").as(
+                "getDashboard"
+            );
             cy.get("button[type='submit']").click();
+            cy.wait("@getDashboard").then((intercept) => {
+                expect(intercept.response.statusCode).to.eq(200);
+            });
             cy.url().should("include", "/dashboard/index");
             // Expected: stay on login page
             // Note: (this case passed because the task is to make every test pass,
@@ -45,7 +57,11 @@ describe("Login Feature OrangeHRM", () => {
         it("TC_LOGIN_003-Show Dashboard page OrangeHRM (invalid password input)", () => {
             cy.get("input[placeholder='Username']").type("Admin");
             cy.get("input[placeholder='Password']").type("Admin123");
+            cy.intercept("GET", "**/core/i18n/messages").as("getErrMessage");
             cy.get("button[type='submit']").click();
+            cy.wait("@getErrMessage").then((intercept) => {
+                expect(intercept.response.statusCode).to.eq(304);
+            });
             cy.url().should("include", "/auth/login");
             cy.get(".oxd-alert-content.oxd-alert-content--error").should(
                 "be.visible"
@@ -58,7 +74,11 @@ describe("Login Feature OrangeHRM", () => {
         it("TC_LOGIN_004-Show Dashboard page OrangeHRM (invalid username and password input)", () => {
             cy.get("input[placeholder='Username']").type("Adm");
             cy.get("input[placeholder='Password']").type("Adm");
+            cy.intercept("GET", "**/core/i18n/messages").as("getErrMessage");
             cy.get("button[type='submit']").click();
+            cy.wait("@getErrMessage").then((intercept) => {
+                expect(intercept.response.statusCode).to.eq(304);
+            });
             cy.url().should("include", "/auth/login");
             cy.get(".oxd-alert-content.oxd-alert-content--error").should(
                 "be.visible"
@@ -70,6 +90,7 @@ describe("Login Feature OrangeHRM", () => {
         });
         it("TC_LOGIN_005-Show Dashboard page OrangeHRM (empty username input)", () => {
             cy.get("input[placeholder='Password']").type("Adm");
+            // No intercept needed here: frontend validation stops submission before backend request
             cy.get("button[type='submit']").click();
             cy.url().should("include", "/auth/login");
             cy.get(
@@ -81,6 +102,7 @@ describe("Login Feature OrangeHRM", () => {
         });
         it("TC_LOGIN_006-Show Dashboard page OrangeHRM (empty password input)", () => {
             cy.get("input[placeholder='Username']").type("Adm");
+            // No intercept needed here: frontend validation stops submission before backend request
             cy.get("button[type='submit']").click();
             cy.url().should("include", "/auth/login");
             cy.get(
@@ -91,6 +113,7 @@ describe("Login Feature OrangeHRM", () => {
             ).should("contain.text", "Required");
         });
         it("TC_LOGIN_007-Show Dashboard page OrangeHRM (empty username and password input)", () => {
+            // No intercept needed here: frontend validation stops submission before backend request
             cy.get("button[type='submit']").click();
             cy.url().should("include", "/auth/login");
             cy.get("input[placeholder='Username'] ")
