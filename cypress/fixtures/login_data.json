@@ -1,0 +1,8 @@
+{
+    "ValidUsername": "Admin",
+    "ValidPassword": "admin123",
+    "InvalidUserLowercase": "admin",
+    "InvalidPasswordUppercase": "Admin123",
+    "InvalidUsernameGeneral": "Adm",
+    "InvalidPasswordGeneral": "Adm"
+}
