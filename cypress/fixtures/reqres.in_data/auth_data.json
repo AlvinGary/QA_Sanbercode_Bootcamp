@@ -1,0 +1,16 @@
+{
+    "validAuth": {
+        "email": "eve.holt@reqres.in",
+        "password": "pistol"
+    },
+    "authNotDefined": {
+        "email": "Larry123@email.com",
+        "password": "larry123"
+    },
+    "authMissPass": {
+        "email": "eve.holt@reqres.in"
+    },
+    "authMissUser": {
+        "password": "pistol"
+    }
+}

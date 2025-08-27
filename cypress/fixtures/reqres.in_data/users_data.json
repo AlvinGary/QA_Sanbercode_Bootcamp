@@ -1,0 +1,32 @@
+[
+    {
+        "email": "larry@mail.com",
+        "first_name": "Larry",
+        "last_name": "Bailey",
+        "avatar": null
+    },
+    {
+        "email": "leo@mail.com",
+        "first_name": "Leo",
+        "last_name": "Stein",
+        "avatar": "https://cdn.iconscout.com/icon/free/png-256/free-user-1895567-1604557.png"
+    },
+    {
+        "email": "taylor@mail.com",
+        "first_name": "Taylor",
+        "last_name": "Wilkerson",
+        "avatar": "https://cdn.iconscout.com/icon/free/png-256/free-user-1895567-1604557.png"
+    },
+    {
+        "email": "ian@mail.com",
+        "first_name": "Ian",
+        "last_name": "Herbert",
+        "avatar": null
+    },
+    {
+        "email": "marty@mail.com",
+        "first_name": "Marty",
+        "last_name": "Quinn",
+        "avatar": null
+    }
+]

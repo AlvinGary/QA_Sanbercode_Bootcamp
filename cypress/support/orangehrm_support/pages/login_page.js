@@ -12,9 +12,8 @@ class LoginPage {
 
     // actions
     visit() {
-        cy.visit(
-            "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-        );
+        const firstVisitUrl = Cypress.env("orangehrmBaseUrl");
+        cy.visit(`${firstVisitUrl}/auth/login`);
         cy.get("body").should("be.visible");
     }
 
