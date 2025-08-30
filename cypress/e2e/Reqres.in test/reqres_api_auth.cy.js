@@ -1,5 +1,5 @@
-import auth_data from "../../fixtures/reqres.in_data/auth_data.json";
-import auth_api from "../../support/reqres.in_support/api/auth_api";
+import auth_data from "../../fixtures/reqres.in_data/reqres_auth_data.json";
+import auth_api from "../../support/reqres.in_support/api/reqres_auth_api";
 
 describe("Reqres.in Auth Features API", () => {
     context("Register Account", () => {

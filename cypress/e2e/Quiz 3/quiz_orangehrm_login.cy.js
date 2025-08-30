@@ -1,5 +1,5 @@
-import login_data from "../../fixtures/orangehrm_data/login_data.json";
-import login_page from "../../support/orangehrm_support/pages/login_page";
+import login_data from "../../fixtures/orangehrm_data/quiz3_data/quiz3_orangehrm_login_data.json";
+import login_page from "../../support/quiz3_support/quiz3_orangehrm_login_page";
 
 describe("Login Feature OrangeHRM", () => {
     // TC_INTRO_001 Membuka Website

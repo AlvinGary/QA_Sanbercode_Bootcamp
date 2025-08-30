@@ -1,5 +1,5 @@
-import users_data from "../../fixtures/reqres.in_data/users_data.json";
-import users_api from "../../support/reqres.in_support/api/users_api";
+import users_data from "../../fixtures/reqres.in_data/reqres_users_data.json";
+import users_api from "../../support/reqres.in_support/api/reqres_users_api";
 
 describe("Reqres.in Users Features API", () => {
     context("Get Users", () => {
